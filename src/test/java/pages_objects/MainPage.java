@@ -7,7 +7,8 @@ import org.openqa.selenium.By;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.$x;
 import static org.junit.Assert.assertEquals;
 
 @Slf4j
@@ -19,12 +20,6 @@ public class MainPage {
     private final static String ALERT_LOGIN_OR_PASS_ERROR = "//div[contains(@class,'error ')]";
 
     private final static SelenideElement CHECK_EMAIL = $(By.name("clb36299772"));
-    @Step("Открыли страницу mail.ru")
-    public MainPage openWebSite() {
-        open("https://mail.ru/");
-        log.info("Переход на страницу осуществлен");
-        return this;
-    }
 
     @Step("Проверили отображение основных элементов")
     public MainPage smokeCheckPage() {
